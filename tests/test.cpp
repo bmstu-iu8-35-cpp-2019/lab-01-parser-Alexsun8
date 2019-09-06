@@ -35,4 +35,13 @@ TEST(my_error, error_to_long_int) {  //слишком длинное число 
     EXPECT_TRUE(object.is_object());
 
     EXPECT_EQ(std::any_cast<double>(ob2[0]),1.4567);
+
+
+    std::string num3 = "[\n"
+                       "    [\"Si-9.15\", \"RTS-9.15\", \"GAZP-9.15\"],\n"
+                       "    [100024, 100027, 100050],\n"
+                       "    [\"Futures contract for USD/RUB\", \"Futures contract for index RTS\", \"Futures contract for Gazprom shares\"]\n"
+                       "]";
+
+    Json j= ticker(num3);
 }

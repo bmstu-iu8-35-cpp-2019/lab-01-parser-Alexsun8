@@ -233,6 +233,7 @@ Json::Json(const std::string &s) {
                 while (s[i] == ' ' || s[i] == '\n') i++;
                 if (s[i] != ',' && s[i] != ']')
                     throw std::logic_error("искл 6 замятая или скобочка массива 22");
+                if(s[i]==','&&s[i+1]==']')i++;
             }
 
         }
@@ -263,4 +264,100 @@ std::any &Json::operator[](const std::string &key) {
     return map[key];
 }
 
+
+Json ticker(std::string & s){
+    size_t i = 0;
+    while (s[i] == ' ' || s[i] == '\n') i++;
+    if(s[i]!='[')throw std::logic_error("№3! нет скобки");
+    i++;
+    while (s[i] == ' ' || s[i] == '\n') i++;
+    if(s[i]!='[')throw std::logic_error("№3! нет1 скобки 1 мас");
+    i++;
+    std::string temp;
+    std::vector<std::string> vticker, vid, vdescription;
+    while(s[i]!=']') {
+        if(s[i]==',')i++;
+        while (s[i] == ' ' || s[i] == '\n') i++;
+        if (s[i] != '"' && s[i] != '\\')throw std::logic_error("№3! нет кавычки");
+        if (s[i] == '\\')i++;
+        i++;
+        temp+='"';
+        while (s[i] != '"' ) {
+            temp += s[i];
+            i++;
+        }
+        temp+='"';
+        vticker.push_back(temp);
+        temp.clear();
+       // if (s[i] == '\\')i++;
+        i++;
+        while (s[i] == ' ' || s[i] == '\n') i++;
+
+        if (s[i] != ',' && s[i] != ']') throw std::logic_error("ном3 запятая");
+    }
+    i++;
+    if(s[i]==',')i++;
+    while (s[i] == ' ' || s[i] == '\n') i++;
+
+    while(s[i]!=']') {
+        i++;
+        if(s[i]==',')i++;
+        while (s[i] == ' ' || s[i] == '\n') i++;
+        while ((s[i] >= '0' && s[i] <= '9')){
+            temp += s[i];
+            i++;
+        }
+        vid.push_back(temp);
+        temp.clear();
+        while (s[i] == ' ' || s[i] == '\n') i++;
+
+        if (s[i] != ',' && s[i] != ']') throw std::logic_error("ном3 cjs запятая");
+    }
+
+    i++;
+    if(s[i]==',')i++;
+    while (s[i] == ' ' || s[i] == '\n') i++;
+
+    while(s[i]!=']') {
+        i++;
+        if(s[i]==',')i++;
+        while (s[i] == ' ' || s[i] == '\n') i++;
+        if (s[i] != '"' && s[i] != '\\')throw std::logic_error("№3! нет кавычки");
+        if (s[i] == '\\')i++;
+        i++;
+        temp+='"';
+        while (s[i] != '"' ) {
+            temp += s[i];
+            i++;
+        }
+        temp+='"';
+        vdescription.push_back(temp);
+        temp.clear();
+        // if (s[i] == '\\')i++;
+        i++;
+        while (s[i] == ' ' || s[i] == '\n') i++;
+
+        if (s[i] != ',' && s[i] != ']') throw std::logic_error("ном3 запятая");
+    }
+    i++;
+    if(s[i]==',')i++;
+    while (s[i] == ' ' || s[i] == '\n') i++;
+    if(s[i]!= ']')throw std::logic_error("ном3 скобка вкцн");
+
+
+    temp += '[';
+    for(size_t k=0;k <vid.size();k++){
+        temp+="{\"ticker\":";
+        temp+=vticker[k];
+        temp+=", \"id\":";
+        temp+=vid[k];
+        temp+=", \"description\":";
+        temp+= vdescription[k];
+        temp+="},";
+    }
+    temp+=']';
+
+    Json j(temp);
+    return j;
+}
 

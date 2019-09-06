@@ -55,6 +55,10 @@ public:
         Json j(s);
         return j;
     }
+
 };
+
+
+Json ticker(std::string & s);
 
 #endif // INCLUDE_HEADER_HPP_

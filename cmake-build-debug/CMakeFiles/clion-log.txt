@@ -1,9 +1,0 @@
-/home/alexsun8/clion/clion-2019.2.1/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/alexsun8/CLionProjects/lab1/lab-01-parser-Alexsun8
--- [hunter] Calculating Toolchain-SHA1
--- [hunter] Calculating Config-SHA1
--- [hunter] HUNTER_ROOT: /home/alexsun8/.hunter
--- [hunter] [ Hunter-ID: 70287b1 | Toolchain-ID: 511a137 | Config-ID: dffbc08 ]
--- [hunter] GTEST_ROOT: /home/alexsun8/.hunter/_Base/70287b1/511a137/dffbc08/Install (ver.: 1.8.0-hunter-p11)
--- Configuring done
--- Generating done
--- Build files have been written to: /home/alexsun8/CLionProjects/lab1/lab-01-parser-Alexsun8/cmake-build-debug
