@@ -34,7 +34,7 @@ TEST(my_error, error_to_long_int) {  //слишком длинное число 
 
     EXPECT_TRUE(object.is_object());
 
-    EXPECT_EQ(std::any_cast<double>(ob2[0]),1.4567);
+ //   EXPECT_EQ(std::any_cast<double>(ob2[0]),1.4567);
 
 
     std::string num3 = "[\n"
