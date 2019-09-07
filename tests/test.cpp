@@ -6,7 +6,7 @@
 
 
 TEST(my_error, error_to_long_int) {  //слишком длинное число int
-    std::string file = "/home/alexsun8/CLionProjects/lab1/lab-01-parser-Alexsun8/text.json";
+    std::string file = "text.json";
 
 
     std::string s = "{ \"lastname\" : \"Ivanov\",  \"firstname\" : \"Ivan\",  \"age\" : 25,  \"islegal\" : false,  \"marks\" : [ 4,5,5,5,2,3 ], \"address\" : {\"city\" : \"Moscow\",  \"street\" : \"Vozdvijenka\" } }";

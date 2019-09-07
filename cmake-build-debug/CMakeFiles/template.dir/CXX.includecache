@@ -25,14 +25,14 @@ sstream
 -
 
 /home/alexsun8/CLionProjects/lab1/lab-01-parser-Alexsun8/sources/source.cpp
-header.hpp
--
-string
-/home/alexsun8/CLionProjects/lab1/lab-01-parser-Alexsun8/sources/string
-exception
-/home/alexsun8/CLionProjects/lab1/lab-01-parser-Alexsun8/sources/exception
-cstdlib
--
 array
 -
+cstdlib
+-
+header.hpp
+-
+exception
+/home/alexsun8/CLionProjects/lab1/lab-01-parser-Alexsun8/sources/exception
+string
+/home/alexsun8/CLionProjects/lab1/lab-01-parser-Alexsun8/sources/string
 
