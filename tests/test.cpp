@@ -6,13 +6,17 @@
 
 
 TEST(my_error, error_to_long_int) {  //слишком длинное число int
+<<<<<<< HEAD
     std::string file = "text.json";
+=======
+ //   std::string file = "text.json";
+>>>>>>> 8243484487fd474da767b5c527543f3dbc2ad599
 
 
     std::string s = "{ \"lastname\" : \"Ivanov\",  \"firstname\" : \"Ivan\",  \"age\" : 25,  \"islegal\" : false,  \"marks\" : [ 4,5,5,5,2,3 ], \"address\" : {\"city\" : \"Moscow\",  \"street\" : \"Vozdvijenka\" } }";
 
     Json object = Json::parse(s);
-    Json ob2 = Json::parseFile(file);
+ //   Json ob2 = Json::parseFile(file);
 
     EXPECT_EQ(std::any_cast<std::string>(object["lastname"]), "Ivanov");
     EXPECT_EQ(std::any_cast<bool>(object["islegal"]), false);
@@ -26,9 +30,9 @@ TEST(my_error, error_to_long_int) {  //слишком длинное число 
     EXPECT_EQ(std::any_cast<std::string>(address["city"]), "Moscow");
     EXPECT_EQ(std::any_cast<std::string>(address["street"]), "Vozdvijenka");
 
-    EXPECT_TRUE(ob2.is_array());
+//    EXPECT_TRUE(ob2.is_array());
 
-    EXPECT_FALSE(ob2.is_object());
+//    EXPECT_FALSE(ob2.is_object());
 
     EXPECT_FALSE(object.is_array());
 
