@@ -17,9 +17,9 @@ Json::Json(const std::string &s) {
       for (; i < s.size(); i++) {
         //  if (s[i] != ' ') {
         while (s[i] == ' ' || s[i] == '\n') i++;
-        if (s[i] != '"' && s[i] != '\\')
+        if (s[i] != '"' && s[i] != '\\') {
           throw std::logic_error("Нет кавычек в начале строки");
-        else {
+        } else {
           if (s[i] == '\\') i++;  // key
           i++;
           std::string key = "";
