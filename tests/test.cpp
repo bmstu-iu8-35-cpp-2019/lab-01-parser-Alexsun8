@@ -5,7 +5,7 @@
 #include <header.hpp>
 
 TEST(my_error, JSON_ALL) {  //слишком длинное число int
-  std::string file = @".\text.json";
+  std::string file = ".\text.json";
 
   std::string s =
       "{ \"lastname\" : \"Ivanov\",  \"firstname\" : \"Ivan\",  \"age\" : 25,"
