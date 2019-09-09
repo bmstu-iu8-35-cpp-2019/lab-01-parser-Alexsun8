@@ -48,12 +48,9 @@ class Json {
   // Метод возвращает объекта класса Json из файла, содержащего Json-данные в
   // текстовом формате.
   static Json parseFile(const std::string &path_to_file) {
-    std::string s;
 
     std::ifstream f(path_to_file);
-    std::stringstream ss;
-    ss << f.rdbuf();
-    s = ss.str();
+    std::string s((std::istreambuf_iterator<char>(f)), std::istreambuf_iterator<char>());
 
     Json j(s);
     return j;
