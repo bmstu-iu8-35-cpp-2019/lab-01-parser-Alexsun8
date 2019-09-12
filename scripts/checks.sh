@@ -13,10 +13,13 @@ CMAKE_TOOLCHAIN_OPTS="-DCMAKE_TOOLCHAIN_FILE='`pwd`/tools/polly/sanitize-address
 CMAKE_OPTS="$CMAKE_LINKER_OPTS $CMAKE_CONFIG_OPTS $CMAKE_TOOLCHAIN_OPTS"
 cmake -H. -B_builds $CMAKE_OPTS
 cmake --build _builds
-./_builds/tests
+cd _builds
+./tests
+cd ../
 # thread sanitizer
 CMAKE_TOOLCHAIN_OPTS="-DCMAKE_TOOLCHAIN_FILE='`pwd`/tools/polly/sanitize-thread-cxx17-pic.cmake'"
 CMAKE_OPTS="$CMAKE_LINKER_OPTS $CMAKE_CONFIG_OPTS $CMAKE_TOOLCHAIN_OPTS"
 cmake -H. -B_builds $CMAKE_OPTS
 cmake --build _builds
-./_builds/tests
+cd _builds
+./tests
