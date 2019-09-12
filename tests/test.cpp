@@ -8,11 +8,11 @@
 
 TEST(my_error, JSON_ALL) {  //слишком длинное число int
   std::string file = "../Json/text.json";
-  
+
   std::cout << "Current path: "
-			<< boost::filesystem::current_path().string()
-			<< std::endl;
-  
+            << boost::filesystem::current_path().string()
+            << std::endl;
+
   std::string s =
       "{ \"lastname\" : \"Ivanov\",  \"firstname\" : \"Ivan\",  \"age\" : 25,"
       "\"islegal\" : false,  \"marks\" : [ 4,5,5,5,2,3 ], \"address\" : "
