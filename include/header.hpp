@@ -19,6 +19,10 @@ class Json {
   // Конструктор из строки, содержащей Json-данные.
   explicit Json(const std::string &s);
 
+  void parsefig(const std::string &s, size_t i);
+
+  void parsesq(const std::string &s, size_t i);
+
   // Метод возвращает true, если данный экземпляр содержит в себе JSON-массив.
   // Иначе false.
   bool is_array() const;
